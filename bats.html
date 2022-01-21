@@ -1,0 +1,765 @@
+<!DOCTYPE HTML>
+<!--
+	Story by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<html>
+	<head>
+		<title>BATS</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/coreui-icons-master/css/all.min.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+				<!-- Mosaic Maker Banner -->
+				<section class="banner style5 orient-left content-align-center image-position-left fullscreen onload-image-fade-in onload-content-fade-right" id="top">
+					<div class="content">
+						<h1>Bill Auditing & Tenant Submetering 
+							<br>
+							-
+							<br>
+							Real Time Energy Monitoring
+						 </h1>
+						<p class="major">Examples and Explanations</p>
+					</div>
+					<div class="image">
+						<img src="images/mosaicmaker/anqi.png" alt="" />
+					</div>
+					<a href="#goal" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				</section>
+
+
+				<section class="banner style1 orient-right content-align-center image-position-center fullscreen onscroll-image-fade-in" id="goal">
+					<div class="content">
+						<h1>The Goal</h1>
+						<p class="major">Create fidelitous and aesthetic photomosaics programmatically without the use of semi-transparant overlays</p>
+					</div>
+					<div class="image">
+						<img src="images/mosaicmaker/huangbo.png" alt="" />
+					</div>
+					<a href="#definitions" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				</section>
+
+
+
+
+				<!-- Definitions -->
+				<section class="banner style1 orient-left content-align-center image-position-center fullscreen onscroll-image-fade-in" id="definitions">
+					<div class="content">  <!-- content-custom -->
+						<h1>Some Helpful Vocabulary</h2>
+						<p>The <b>Target Image</b> is broken up into <b>Sections</b>. Images are chosen from a library which I call <b>Pieces</b> in order to create a <b>Photomosaic</b>. Pieces are assigned to sections using a <b>Comparison Algorithm</b> which is typically comprised of a <b>Reducing Function</b> and an <b>Error Function</b>.</p>
+						<!-- <p>There are many things that affect the <b>Fidelity</b> of the result. Let's take a look at some of them.</p>  -->
+						<!-- <div class="table-wrapper">
+							<table class="alt uniform fixed">
+								<tbody>
+									<tr>
+										<td>Target Image</td>
+										<td>The image you are trying to reproduce in mosaic form</td>
+									</tr>
+									<tr>
+										<td>Sections</td>
+										<td>The target image is broken up into sections</td>
+									</tr>
+									<tr>
+										<td>Pieces</td>
+										<td>Pieces are images used to construct the mosaic</td>
+									</tr>
+									<tr>
+										<td>Granularity</td>
+										<td>The total number of sections</td>
+									</tr>
+									<tr>
+										<td>Section Granularity</td>
+										<td>How finely each section and piece gets chopped up when comparing them</td>
+									</tr>
+									<tr>
+										<td>Neighborhood Size</td>
+										<td>Used to determine how far away duplicate pieces need to be from each other</td>
+									</tr>
+									<tr>
+										<td>Max Instances</td>
+										<td>How many times a specific piece can be used</td>
+									</tr>
+									<tr>
+										<td>RGB Weighting</td>
+										<td>A list of three numbers to weight the error associated with each color value</td>
+									</tr>
+									<tr>
+										<td>Reduce and Error Functions</td>
+										<td>The specific algorithms used for comparing pieces and sections</td>
+									</tr>
+								</tbody>
+							</table>
+						</div> -->
+					</div>
+					<div class="image">
+						<img src="images/mosaicmaker/shuqi.png" alt="" />
+					</div>
+					<a href="#climbing-project" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				</section>
+
+
+				<section class="banner style1 orient-right content-align-center image-position-center fullscreen onscroll-image-fade-in" id="climbing-project">
+					<div class="content">
+						<h1>Climbing Project</h1>
+						<p class="major">I used this image to guide some of the development, what follows is a brief desciption of some of the insights, thoughts and development process.</p>
+					</div>
+					<div class="image">
+						<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\James.png" alt="" />
+					</div>
+					<a href="#granularity" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				</section>
+
+
+				<section class="wrapper style1 align-center gallery-container" id="granularity">
+					<div class="inner">
+						<h2>Granularity: A Trade-Off between Fidelity and Spirit</h2>
+						<p class="major"> Granularity refers to the number of sections. Higher granularity generally yields better fidelity. But go overboard and you're just approximating pixels. I found that between 30 and 50 sections across the shorter dimension is a good balance point.</p>					 
+					</div>
+
+					<div class="inner zero-padding-top">
+						<div class="gallery style2 medium lightbox onscroll-fade-in">
+							<article>
+								<a href="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\01-granularity\F=1 NS=0 R=0 G=1_30 RF=average EF=rmse NP=100 T=2-1641786644.png" class="image">
+									<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\01-granularity\F=1 NS=0 R=0 G=1_30 RF=average EF=rmse NP=100 T=2-1641786644.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Lower Granularity</h3>
+									<p></p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+
+							<article>
+								<a href="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\01-granularity\F=1 NS=0 R=0 G=1_50 RF=average EF=rmse NP=100 T=9-1641786562.png" class="image">
+									<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\01-granularity\F=1 NS=0 R=0 G=1_50 RF=average EF=rmse NP=100 T=9-1641786562.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Higher Granularity</h3>
+									<p></p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>					
+						</div>
+					</div>
+					<a href="#library-size" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				</section>
+
+
+				<section class="wrapper style1 align-center gallery-container" id="library-size">
+					<div class="inner">
+						<h2>Piece Library: The More Comprehensive The Better</h2>
+						<p class="major"> More (and more varied) pieces generally yields better fidelity. It is important to groom the piece library, though. For example, pictures with a border or with words on them typically don't make for good pieces. I also generally avoid images that are generally the same (when getting images from the internet you'll wind up with a lot of variants of the same image). I also found pictures of eyes don't generally make for great pieces. Somewhere in the neighborhood of 1000 pieces is usually a good start.
+							<br>
+						The images below use completely different piece libraries. On the left, just 100 images from random google image searches. On the right uses 500 or so images from an extended vacation I took in 2019.</p>					 
+					</div>
+
+					<div class="inner zero-padding-top">
+						<div class="gallery style2 medium lightbox onscroll-fade-in">
+							<article>
+								<a href="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\01-granularity\F=1 NS=0 R=0 G=1_50 RF=average EF=rmse NP=100 T=9-1641786562.png" class="image">
+									<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\01-granularity\F=1 NS=0 R=0 G=1_50 RF=average EF=rmse NP=100 T=9-1641786562.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>100 Piece Library</h3>
+									<p>Collected from the internet</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+
+							<article>
+								<a href="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\02-library-size\F=1 NS=0 R=0 G=1_50 RF=average EF=rmse NP=525 T=35-1641786958.png" class="image">
+									<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\02-library-size\F=1 NS=0 R=0 G=1_50 RF=average EF=rmse NP=525 T=35-1641786958.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>~500 Piece Library</h3>
+									<p>Curated from photos of an extended vacation</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>					
+						</div>
+					</div>
+					<a href="#section-granularity" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				</section>
+
+
+				<section class="wrapper style1 align-center gallery-container" id="section-granularity">
+					<div class="inner">
+						<h2>Image Comparison: Reduce Reuse Recycle</h2>
+						<p class="major"> A logical first pass when programatically constructing a photomosaic is to reduce sections and pieces down to a single pixel of information that represents the image somehow. This works, but is improved by reducing image data slightly less severly, to say a 5x5 grid of pixels. Just look at that armpit in the photo on the right!
+						<br>
+						Of course, resizing both images to the size of the smaller image and comparing pixel by pixel is also possible, but that takes quite a bit more time and doesn't actually improve fidelity in my experience over using reduced image data because of limitations typical in most piece libraries. </p>
+					</div>
+
+					<div class="inner zero-padding-top">
+						<div class="gallery style2 medium lightbox onscroll-fade-in">
+							<article>
+								<a href="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\02-library-size\F=1 NS=0 R=0 G=1_50 RF=average EF=rmse NP=525 T=35-1641786958.png" class="image">
+									<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\02-library-size\F=1 NS=0 R=0 G=1_50 RF=average EF=rmse NP=525 T=35-1641786958.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Low Section Granularity</h3>
+									<p>Each image is reduced to three numbers before comparing - average r,g, and b</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+
+							<article>
+								<a href="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\03-section-granularity\F=5 NS=0 R=0 G=1_50 RF=average EF=rmse NP=525 T=703-1641787794.png" class="image">
+									<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\03-section-granularity\F=5 NS=0 R=0 G=1_50 RF=average EF=rmse NP=525 T=703-1641787794.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Higher Section Granularity</h3>
+									<p>Each image is reduced to 75 numbers before comparing - average r,g, and b values for each part of a 5x5 grid</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+						</div>
+					</div>
+
+					<a href="#randomization" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				</section>
+
+
+
+
+				<section class="wrapper style1 align-center gallery-container" id="randomization">
+					<div class="inner">
+						<h2>Randomization: And Some Retrospection</h2>
+						<p class="major"> So far I've been trying to increase the fidelity, and I think the image on the left (below) isn't too shabby for a photomosaic of a random vacation photo made from other photos of the same vacation (as far as detail goes), but it doesn't look much like a photomosaic with large swaths of the target-image using the same piece over and over. A straightforward approach to alleviating this issue is to introduce a degree of randomization. Fidelity decreases, but more unique pieces are used, which is in the spirit of creating a photomosaic. Sadly, the armpit photo has changed. I could run the algorthm, pin pieces I really like, and run again, but let's take a look at another method.</p>					 
+					</div>
+
+					<div class="inner zero-padding-top">
+						<div class="gallery style2 medium lightbox onscroll-fade-in">
+							<article>
+								<a href="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\04a-randomization\F=5 NS=0 R=0 G=1_50 RF=average EF=rmse NP=525 T=703-1641787794.png" class="image">
+									<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\04a-randomization\F=5 NS=0 R=0 G=1_50 RF=average EF=rmse NP=525 T=703-1641787794.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>No Randomization</h3>
+									<p>The best piece for each section is chosen regardless of surrounding pieces.</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+
+							<article>
+								<a href="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\04a-randomization\F=5 NS=0 R=10 G=1_50 RF=average EF=rmse NP=525 T=969-1641789018.png" class="image">
+									<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\04a-randomization\F=5 NS=0 R=10 G=1_50 RF=average EF=rmse NP=525 T=969-1641789018.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Randomization</h3>
+									<p>The best matches are calculated, and a piece is chosen randomly from the top of the list.</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>					
+						</div>
+					</div>
+					<a href="#neighborhood-size" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				</section>
+
+
+				<section class="wrapper style1 align-center gallery-container" id="neighborhood-size">
+					<div class="inner">
+						<h2>Neighborhood Constraint: This Town Ain't Big Enough For the Two of Us</h2>
+						<p class="major">Another method to alleviate large areas of the photomosaic choosing the same piece without introducing randomization is to force duplicate pieces to be a certain distance from eachother in the final result. This gives some fidelity back while still increasing the number of unique pieces, however, a repeated pattern now emerges as the best matches are cycled through in a way that satisfies the new contstraint.
+					</div>
+					<div class="inner zero-padding-top">
+						<div class="gallery style2 medium lightbox onscroll-fade-in">
+							<article>
+								<a href="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\04b-neighborhood-size\F=5 NS=0 R=10 G=1_50 RF=average EF=rmse NP=525 T=969-1641789018.png" class="image">
+									<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\04b-neighborhood-size\F=5 NS=0 R=10 G=1_50 RF=average EF=rmse NP=525 T=969-1641789018.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Using Randomization</h3>
+									<p>The armpit piece is gone :/</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+
+							<article>
+								<a href="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\04b-neighborhood-size\F=5 NS=5 R=0 G=1_50 RF=average EF=rmse NP=525 T=449-1641789599.png" class="image">
+									<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\04b-neighborhood-size\F=5 NS=5 R=0 G=1_50 RF=average EF=rmse NP=525 T=449-1641789599.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Using Neighborhood Constraint</h3>
+									<p>The armpit piece is back!</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+						</div>
+					</div>
+					<a href="#max-instances" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				</section>
+
+
+
+				<section class="wrapper style1 align-center gallery-container" id="max-instances">
+					<div class="inner">
+						<h2>Piece Count: A Piece Has Got To Know Their Limitations</h2>
+						<p class="major">To help with this repeated pattern, one option is to enforce a maximum number of times a piece can be chosen as the best match for a section. But if you set the limit too low relative to the number of pieces in your library, you'll notice that the fidelity plumets as the algorthm starts to run out of pieces to choose from. There isn't a rule of thumb I found for this one, it really depends on the number of sections relative to the number of pieces, and whether or not you want to maximize unique pieces. For the image on the right, I set max instances to 5 and because there are 2500 sections and only about 500 pieces, the result is that almost every piece will be used 5 times. You'll notice that the top of the mosaic looks similar, but at the bottom, the algorithm is basically just choosing pieces that are leftover, we should save the best pieces for where we needed them the most!</p>
+					</div>
+					<div class="inner zero-padding-top">
+						<div class="gallery style2 medium lightbox onscroll-fade-in">
+							<article>
+								<a href="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\05-max-instances\F=5 NS=5 R=0 G=1_50 RF=average EF=rmse NP=525 T=449-1641789599.png" class="image">
+									<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\05-max-instances\F=5 NS=5 R=0 G=1_50 RF=average EF=rmse NP=525 T=449-1641789599.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>No Limit on Max Instances</h3>
+									<p>2500 sections and 500 pieces, about 100 unique pieces are used</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+
+							<article>
+								<a href="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\05-max-instances\F=5 NS=5 R=0 G=1_50 RF=average EF=rmse NP=525 T=461-1641800364.png" class="image">
+									<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\05-max-instances\F=5 NS=5 R=0 G=1_50 RF=average EF=rmse NP=525 T=461-1641800364.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Limit on Max Instances</h3>
+									<p>2500 sections and 500 pieces, about 500 unique pieces are used</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+
+						</div>
+					</div>
+					<a href="#section-priority" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				</section>
+
+
+
+				<section class="wrapper style1 align-center gallery-container" id="section-priority">
+					<div class="inner">
+						<h2>Section Priority: All Sections are Not Created Equal</h2>
+						<p class="major">Setting the section priority is a good way to try and make sure sections that need more detail are handled first while more pieces are available. Before I thought to set section priority, the sections were being populated with pieces from top to bottom and left to right. Now the default is radial (highest in the center and decreasing towards the edges). Other methods of setting section priority include edge detection, face dectection, or manual selection</p>
+					</div>
+					<div class="inner zero-padding-top">
+						<div class="gallery style2 medium lightbox onscroll-fade-in">
+							<article>
+								<a href="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\06-section-priority\F=5 NS=5 R=0 G=1_50 RF=average EF=rmse NP=525 T=461-1641800364.png" class="image">
+									<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\06-section-priority\F=5 NS=5 R=0 G=1_50 RF=average EF=rmse NP=525 T=461-1641800364.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>No Section Priority</h3>
+									<p>The algorthm goes top to bottom and left to right when all sections have the same priority</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+							<article>
+								<a href="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\06-section-priority\F=5 NS=5 R=0 G=1_50 RF=average EF=rmse NP=525 T=472-1641802277.png" class="image">
+									<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\06-section-priority\F=5 NS=5 R=0 G=1_50 RF=average EF=rmse NP=525 T=472-1641802277.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Radial Section Priority (The Default)</h3>
+									<p>Starts at the center and decreases radially outwards</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+						</div>
+					</div>
+					<a href="#target-image" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				</section>
+
+
+
+
+
+				<section class="wrapper style1 align-center gallery-container" id="target-image">
+					<div class="inner">
+						<h2>Comparison to Target Image</h2>
+						<p class="major">And Finally, here is a comparison to the target-image. There are still tons of tweaks that can be done in addition to ones already mentioned, such as pinning pieces and rerunning the algorthm, adjusting individual error weights for rgb values, adding more pieces to the library, trying different reducing and error functions, different section priorities, updating specific sections post-creation using new settings, etc, etc, etc.</p>
+					</div>
+					<div class="inner zero-padding-top">
+						<div class="gallery style2 medium lightbox onscroll-fade-in">
+							<article>
+								<a href="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\10-final-comparison\F=5 NS=5 R=0 G=1_50 RF=average EF=rmse NP=525 T=472-1641802277.png" class="image">
+									<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\10-final-comparison\F=5 NS=5 R=0 G=1_50 RF=average EF=rmse NP=525 T=472-1641802277.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>"Final" Mosaic</h3>
+									<p>In reality there is tons more you can do</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+							<article>
+								<a href="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\10-final-comparison\James.png" class="image">
+									<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\gallery\james-climbing\10-final-comparison\James.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Target Image</h3>
+									<p>A picture of me climbing</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+						</div>
+					</div>
+					<a href="#examples" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				</section>
+
+				
+				<section class="banner style1 orient-left content-align-center image-position-center fullscreen onscroll-image-fade-in" id="examples">
+					<div class="content">  <!-- content-custom -->
+						<h1>Some More Examples</h2>
+						<p>If you've gotten this far, enjoy some more examples and a silly video</p>
+
+					</div>
+					<div class="image">
+						<img src="images/mosaicmaker/james-square2.png" alt="" />
+					</div>
+					<a href="#example1" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				</section>
+
+
+				<section class="spotlight style1 orient-right content-align-center image-position-center onscroll-image-fade-in" id="example1">
+					<div class="content">
+						<h2>100% Homegrown</h2>
+						<p>This is the mosaic from the top of the page. To create it, I divided the target-image into a 16x16 grid of 256 images. I saved those to be used as pieces and created a mosaic using a 32x32 grid, which effectively requires that each piece zoom by a factor of 2 and then find a new home.</p>
+					</div>
+					<div class="image">
+						<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\mosaicmaker\anqi.png" alt="" />
+					</div>
+					<!-- <a href="#example2" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a> -->
+				</section>
+
+
+				<section class="spotlight style1 orient-left content-align-center image-position-center onscroll-image-fade-in" id="example2">
+					<div class="content">
+						<h2>Single Origin Mosaic</h2>
+						<p>This is another example of making a mosaic from pieces of itself. I rather enjoy the results from these.</p>
+					</div>
+					<div class="image">
+						<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\mosaicmaker\sunset.png" alt="" />
+					</div>
+					<!-- <a href="#example3" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a> -->
+				</section>
+
+
+				<section class="spotlight style1 orient-right content-align-center image-position-center onscroll-image-fade-in" id="example3">
+					<div class="content">
+						<h2>No Climbing</h2>
+						<p>My friend likes taking pictures of no climbing signs so I made one of him from only pictures of no climbing signs I found while travelling. The fidelity is quite low but the number of pieces is also very low! I might have abandoned my scruples and put an overlay on this one out of necessity in the final product.</p>
+					</div>
+					<div class="image">
+						<img src="C:\Users\JamesM\Projects\Programming\Portfolio\html5up-story\images\mosaicmaker\noclimbing.png" alt="" />
+					</div>
+					<!-- <a href="#example4" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a> -->
+				</section>
+
+
+
+				<!-- edge detection example -->
+				<section class="wrapper style1 align-center gallery-container" id="edge-detection">
+					<div class="inner">
+						<h2>She's Got an Edge!</h2>
+						<p class="major">Here is an example comparing radial and edge detection to set the priority. The target, edge detection, and section priority images are shown for reference as well. 
+							<br>
+						Regarding the mosaics, the main differences I notice is the boundary between the face and hair is more obvious, and the lips are a bit more detailed as well, thanks to the high amount of edges found around the teeth.
+						</p>
+						<!-- <img class="helper-img" src="images\gallery\anqi\anqi-edge\01-target.jpg" alt="" />
+						<img class="helper-img" src="images\gallery\anqi\anqi-edge\02-edges.png" alt="" />
+						<img class="helper-img" src="images\gallery\anqi\anqi-edge\03-show-priority.png" alt="" /> -->
+					</div>
+
+
+					<div class="inner zero-padding-top">
+
+						<!-- Gallery 1 - I want to make a little bit smaller -->
+						<div class="gallery style2 small lightbox onscroll-fade-in">
+							<article>
+								<a href="images\gallery\anqi\anqi-edge\01-target.jpg" class="image">
+									<img src="images\gallery\anqi\anqi-edge\01-target.jpg" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Target</h3>
+									<p>My Wife</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+
+							<article>
+								<a href="images\gallery\anqi\anqi-edge\02-edges.png" class="image">
+									<img src="images\gallery\anqi\anqi-edge\02-edges.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Edges Found</h3>
+									<p>Using the default edge detection algorithm in PIL with a 0.5 radius</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+
+							<article>
+								<a href="images\gallery\anqi\anqi-edge\03-show-priority.png" class="image">
+									<img src="images\gallery\anqi\anqi-edge\03-show-priority.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Show Priority</h3>
+									<p>The calculated priority by section based on the edge detection with some excel conditional formatting</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+						</div>
+
+						<br>
+
+						<!-- Gallery 2! -->
+						<div class="gallery style2 medium lightbox onscroll-fade-in">
+							<article>
+								<a href="images\gallery\anqi\anqi-edge\05-mosaic-radial.png" class="image">
+									<img src="images\gallery\anqi\anqi-edge\05-mosaic-radial.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Mosaic with Radial Priority</h3>
+									<p></p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+							<article>
+								<a href="images\gallery\anqi\anqi-edge\04-mosaic-edge.png" class="image">
+									<img src="images\gallery\anqi\anqi-edge\04-mosaic-edge.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Mosaic with Edges Setting Priority</h3>
+									<p></p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>							
+						</div>
+					</div>
+					<a href="#face-detection" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				</section>
+
+
+
+
+
+
+
+
+				<!-- edge detection example -->
+				<section class="wrapper style1 align-center gallery-container" id="face-detection">
+					<div class="inner">
+						<h2>Scar Jo</h2>
+						<p class="major">Here is an example comparing radial and face detection to set the priority. The target, face detection, and section priority images are shown for reference as well. 
+							<br>
+						I used the largest library I have for any of the examples so far at around 4000 images and put all the settings pretty high so it's kind of hard to tell what increasing the priority of these target areas did, especially since I had the face detection add to the priority for sections that landed in the squares (rather than replace it). But regardless, it turned out to be mostly popcorn that made up this mosaic in the end. 
+						</p>
+						<!-- <img class="helper-img" src="images\gallery\anqi\anqi-edge\01-target.jpg" alt="" />
+						<img class="helper-img" src="images\gallery\anqi\anqi-edge\02-edges.png" alt="" />
+						<img class="helper-img" src="images\gallery\anqi\anqi-edge\03-show-priority.png" alt="" /> -->
+					</div>
+
+
+					<div class="inner zero-padding-top">
+
+						<!-- Gallery 1 - I want to make a little bit smaller -->
+						<div class="gallery style2 small lightbox onscroll-fade-in">
+							<article>
+								<a href="images\gallery\scarjo\scarjo-target.jpg" class="image">
+									<img src="images\gallery\scarjo\scarjo-target.jpg" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Target</h3>
+									<p>My Wife</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+
+							<article>
+								<a href="images\gallery\scarjo\scarjo-features.png" class="image">
+									<img src="images\gallery\scarjo\scarjo-features.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Edges Found</h3>
+									<p>Using the default edge detection algorithm in PIL with a 0.5 radius</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+
+							<article>
+								<a href="images\gallery\scarjo\scarjo-sectionpriority.png" class="image">
+									<img src="images\gallery\scarjo\scarjo-sectionpriority.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Show Priority</h3>
+									<p>The calculated priority by section based on the edge detection with some excel conditional formatting</p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+						</div>
+
+						<br>
+
+						<!-- Gallery 2! -->
+						<div class="gallery style2 medium lightbox onscroll-fade-in">
+							<article>
+								<a href="images\gallery\scarjo\scarjo-radial.png" class="image">
+									<img src="images\gallery\scarjo\scarjo-radial.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Mosaic with Radial Priority</h3>
+									<p></p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>
+							<article>
+								<a href="images\gallery\scarjo\scarjo-face.png" class="image">
+									<img src="images\gallery\scarjo\scarjo-face.png" alt="" />
+								</a>
+								<div class="caption">
+									<h3>Mosaic with Face Detection Setting Priority</h3>
+									<p></p>
+									<ul class="actions fixed">
+										<li><span class="button small">Details</span></li>
+									</ul>
+								</div>
+							</article>							
+						</div>
+					</div>
+					<a href="#music-video" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				</section>
+
+
+
+
+
+
+
+
+
+
+
+				<section class="wrapper style1 align-center gallery-container" id="music-video">
+					<div class="inner">
+						<h2>Video</h2>
+						<p class="major"> To demonstrate the effect that changing some of the parameters can have. </p>					 
+					</div>
+					<div class="inner zero-padding-top">
+								<div class="video-container">
+									<video controls>
+										<source src="video/MosaicDemoMusic.mp4" type="video/mp4">
+										Your browser does not support the video tag.
+									</video>
+								</div>
+					</div>
+					<!-- <a href="#footer" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a> -->
+				</section>
+
+
+
+				<!--How should this section be laid out?
+				Tons of 1x2 galleries with the click zoom thing? -->
+
+
+
+				<!-- Footer -->
+				<footer class="wrapper style1 align-center" id="footer">
+					<div class="inner">
+						<ul class="icons ul-custom">
+							<li>
+								<a target="_blank" href="https://github.com/wantsomechocolate" class="icon brands style2 fa-github">
+									<span class="label">Github</span>
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="https://stackoverflow.com/users/1937423/wantsomechocolate" class="icon brands style2 fa-stack-overflow">
+									<span class="label">StackOverflow</span>
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="https://www.linkedin.com/in/james-mcglynn/" class="icon brands style2 fa-linkedin-in">
+									<span class="label">LinkedIn</span>
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="https://leetcode.com/wantsomechocolate/" class="icon style2 icon-test icon-custom style2-custom">
+									<i class="label-custom cib-leetcode"></i>
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="https://www.facebook.com/JGlynnius" class="icon brands style2 fa-facebook-f">
+									<span class="label">Facebook</span>
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="https://www.instagram.com/wantsomegraham/" class="icon brands style2 fa-instagram">
+									<span class="label">Instagram</span>
+								</a>
+							</li>
+						</ul>
+						<p>Design: <a class="link-custom" href="https://html5up.net">HTML5 UP</a><br>&copy; Untitled. </p>
+					</div>
+				</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="assets/js/custom.js"></script>
+
+	</body>
+</html>

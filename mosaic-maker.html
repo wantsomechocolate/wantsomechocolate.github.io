@@ -1,0 +1,672 @@
+<!DOCTYPE HTML>
+<!--Story by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)-->
+
+<html>
+	<head>
+		<title>Mosaic Maker</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/coreui-icons-master/css/all.min.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+	</head>
+
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper" class="divided">
+
+			<!-- Mosaic Maker Banner -->
+			<section class="banner style1 orient-left content-align-center image-position-left fullscreen onload-image-fade-in onload-content-fade-right" id="top">
+				<div class="content">
+					<h1>Mosaic Maker</h1>
+					<p class="major">Examples and Explanations</p>
+				</div>
+				<div class="image">
+					<img src="images/mosaicmaker/headers/anqi.png" alt="" />
+				</div>
+				<a href="#goal" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+			</section>
+
+
+			<section class="banner style1 orient-right content-align-center image-position-center fullscreen onscroll-image-fade-in" id="goal">
+				<div class="content">
+					<h1>Some Helpful Vocabulary</h1>
+					<p>The <b>Target Image</b> is broken up into <b>Sections</b>. Images are chosen from a library which I call <b>Pieces</b> in order to create a <b>Photomosaic</b>. Pieces are assigned to sections using a <b>Comparison Algorithm</b> which is typically comprised of a <b>Reducing Function</b> and an <b>Error Function</b>.</p>
+				</div>
+				<div class="image">
+					<img src="images/mosaicmaker/headers/huangbo.png" alt="" />
+				</div>
+				<a href="#definitions" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+			</section>
+
+
+			<section class="banner style1 orient-left content-align-center image-position-center fullscreen onscroll-image-fade-in" id="definitions">
+				<div class="content">
+					<h1>The Goal</h1>
+					<p class="major">Programmatically create fidelitous and aesthetic photomosaics while minimizing the number of sections and maximizing the number of unique pieces without the use of semi-transparant overlays</p>
+
+				</div>
+				<div class="image">
+					<img src="images/mosaicmaker/headers/shuqi.png" alt="" />
+				</div>
+				<a href="#climbing-project" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+			</section>
+
+
+			<section class="banner style1 orient-right content-align-center image-position-center fullscreen onscroll-image-fade-in" id="climbing-project">
+				<div class="content">
+					<h1>A Brief History of Climb</h1>
+					<p class="major">This example walks through some of the major parameters for mosaic building and how changing them affects the result. It also servers as a sort of brief history of the project as most of these parameters were considered/developed in the order presented. </p>
+				</div>
+				<div class="image">
+					<img src="images\mosaicmaker\climbing\09_climbingTarget.png" alt="" />
+				</div>
+				<a href="#granularity" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+			</section>
+
+
+			<section class="wrapper style1 align-center gallery-container" id="granularity">
+				<div class="inner">
+					<h2>Granularity: A Trade-Off between Fidelity and Ethos</h2>
+					<p class="major"> Granularity refers to the number of sections. I think it is generally considered more impressive to use fewer sections when building a mosaic. The point of a photomosaic is to let the detail in each small image combine to produce the target. That being said, more sections leads to better fidelity, which is often hard to resist.  
+						<br>
+					I found that between 30 and 50 sections across the shorter dimension is a good balance point. But it really depends on many factors, such as the ratio between the physical dimensions of the final product and the distance from which it will be viewed, as well as the amount of detail in the target-image. </p>					 
+				</div>
+				<div class="inner zero-padding-top">
+					<div class="gallery style2 medium lightbox onscroll-fade-in">
+						<article>
+							<a href="images\mosaicmaker\climbing\01_g30.png" class="image">
+								<img src="images\mosaicmaker\climbing\01_g30.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>30 x 30</h3>
+								<p></p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+
+						<article>
+							<a href="images\mosaicmaker\climbing\02_g50_p100.png" class="image">
+								<img src="images\mosaicmaker\climbing\02_g50_p100.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>50 x 50</h3>
+								<p></p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>					
+					</div>
+				</div>
+				<a href="#library-size" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+			</section>
+
+
+			<section class="wrapper style1 align-center gallery-container" id="library-size">
+				<div class="inner">
+					<h2>Piece Library: The More Comprehensive The Better</h2>
+					<p class="major"> More (and more varied) pieces yield better fidelity, especially color fidelity. It is important to groom the piece library, though. For example, pictures with a border or with words on them typically don't make for good pieces. I also avoid images that are close variants of each other. Somewhere in the neighborhood of 1000 pieces is a good start.
+						<br>
+					My goal for this mosaic was to use my own vacation photos as the pieces. After curation I wound up with about 500. That's not that many for a piece library so let's see what we can do. 
+					</p>					 
+				</div>
+				<div class="inner zero-padding-top">
+					<div class="gallery style2 medium lightbox onscroll-fade-in">
+						<article>
+							<a href="images\mosaicmaker\climbing\02_g50_p100.png" class="image">
+								<img src="images\mosaicmaker\climbing\02_g50_p100.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>100 Pieces in Library</h3>
+								<p></p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+
+						<article>
+							<a href="images\mosaicmaker\climbing\03_p500_cg1.png" class="image">
+								<img src="images\mosaicmaker\climbing\03_p500_cg1.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>~500 Pieces in Library</h3>
+								<p></p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>					
+					</div>
+				</div>
+				<a href="#section-granularity" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+			</section>
+
+
+			<section class="wrapper style1 align-center gallery-container" id="section-granularity">
+				<div class="inner">
+					<h2>Image Comparison: Reduce Reuse Recycle</h2>
+					<p class="major"> A logical first pass when programatically constructing a photomosaic is to reduce sections and pieces down to a single pixel of information that represents them somehow. This works, but is improved by reducing image data slightly less severly, to a 5x5 grid of pixels, for example. I call this comparison-granularity. Finer comparison granularity generally increases fidelity, just look at that armpit in the photo on the right!
+					<br>
+					Of course, resizing both images to the size of the smaller image and comparing pixel by pixel is also possible, but that takes quite a bit more time and doesn't actually improve fidelity in my experience over using reduced image data because of limitations typical in most piece libraries. </p>
+				</div>
+				<div class="inner zero-padding-top">
+					<div class="gallery style2 medium lightbox onscroll-fade-in">
+						<article>
+							<a href="images\mosaicmaker\climbing\03_p500_cg1.png" class="image">
+								<img src="images\mosaicmaker\climbing\03_p500_cg1.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>Low Section Granularity</h3>
+								<p>Each section and piece is reduced to three numbers before comparing - average r,g, and b</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+						<article>
+							<a href="images\mosaicmaker\climbing\04_cg5_r0.png" class="image">
+								<img src="images\mosaicmaker\climbing\04_cg5_r0.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>Higher Section Granularity</h3>
+								<p>Each section and piece is reduced to 75 numbers before comparing - average r,g, and b values for each part of a 5x5 grid</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+					</div>
+				</div>
+				<a href="#randomization" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+			</section>
+
+
+			<section class="wrapper style1 align-center gallery-container" id="randomization">
+				<div class="inner">
+					<h2>Randomization: And Some Retrospection</h2>
+					<p class="major"> So far I've been trying to increase the fidelity, and I think the image on the left (below) isn't too shabby for a photomosaic of a random vacation photo made from other photos of the same vacation (as far as detail goes), but it doesn't look much like a photomosaic with large swaths of the target-image using the same piece over and over. A straightforward approach to alleviating this issue is to introduce a degree of randomization. Fidelity decreases, but more unique pieces are used. Sadly, the armpit photo has changed. I could run the algorthm without randimization, pin pieces I really like, and run again with randomization, but let's take a look at another method.</p>					
+				</div>
+				<div class="inner zero-padding-top">
+					<div class="gallery style2 medium lightbox onscroll-fade-in">
+						<article>
+							<a href="images\mosaicmaker\climbing\04_cg5_r0.png" class="image">
+								<img src="images\mosaicmaker\climbing\04_cg5_r0.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>No Randomization</h3>
+								<p>The best match for each section is selected</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+						<article>
+							<a href="images\mosaicmaker\climbing\05_r10_ns0.png" class="image">
+								<img src="images\mosaicmaker\climbing\05_r10_ns0.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>Randomization</h3>
+								<p>The best matches are calculated, and a piece is chosen randomly from the top of the list</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>					
+					</div>
+				</div>
+				<a href="#neighborhood-size" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+			</section>
+
+
+			<section class="wrapper style1 align-center gallery-container" id="neighborhood-size">
+				<div class="inner">
+					<h2>Neighborhood Constraint: This Town Ain't Big Enough For the Two of Us</h2>
+					<p class="major">Another method to alleviate large areas of the photomosaic choosing the same piece without introducing randomization is to force duplicate pieces to be a certain distance from eachother in the final result. This gives some fidelity back while still increasing the number of unique pieces, however, a repeated pattern now emerges as the best matches are cycled through in a way that satisfies the new contstraint.
+						<br>
+					I typically use 5 as the number of sections that must separate duplicate pieces. </p>
+				</div>
+				<div class="inner zero-padding-top">
+					<div class="gallery style2 medium lightbox onscroll-fade-in">
+						<article>
+							<a href="images\mosaicmaker\climbing\05_r10_ns0.png" class="image">
+								<img src="images\mosaicmaker\climbing\05_r10_ns0.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>Using Randomization</h3>
+								<p>The armpit piece is gone :/</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+						<article>
+							<a href="images\mosaicmaker\climbing\06_ns0_mi0.png" class="image">
+								<img src="images\mosaicmaker\climbing\06_ns0_mi0.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>Using Neighborhood Constraint</h3>
+								<p>The armpit piece is back!</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+					</div>
+				</div>
+				<a href="#max-instances" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+			</section>
+
+
+			<section class="wrapper style1 align-center gallery-container" id="max-instances">
+				<div class="inner">
+					<h2>Piece Count: A Piece Has Got To Know Their Limitations</h2>
+					<p class="major">To help with this repeated pattern, one option is to enforce a maximum number of times a piece can be chosen as the best match for a section. But if you set the limit too low relative to the number of pieces in your library, you'll notice that the fidelity plumets as the algorthm starts to run out of pieces to choose from. 
+						<br>
+					There isn't a rule of thumb I found for this one, it really depends on the number of sections relative to the number of pieces, and whether or not you want to maximize unique pieces. For the image on the right, I set max instances to 5 and because there are 2500 sections and only about 500 pieces, the result is that almost every piece will be used 5 times. You'll notice that the top of the mosaic looks similar, but at the bottom the algorithm is basically just choosing pieces that are leftover.</p>
+				</div>
+				<div class="inner zero-padding-top">
+					<div class="gallery style2 medium lightbox onscroll-fade-in">
+						<article>
+							<a href="images\mosaicmaker\climbing\06_ns0_mi0.png" class="image">
+								<img src="images\mosaicmaker\climbing\06_ns0_mi0.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>No Limit on Max Instances</h3>
+								<p>2500 sections and 500 pieces, about 100 unique pieces are used</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+						<article>
+							<a href="images\mosaicmaker\climbing\07_mi5_prZero.png" class="image">
+								<img src="images\mosaicmaker\climbing\07_mi5_prZero.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>Limit on Max Instances</h3>
+								<p>2500 sections and 500 pieces, about 500 unique pieces are used</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+					</div>
+				</div>
+				<a href="#section-priority" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+			</section>
+
+
+			<section class="wrapper style1 align-center gallery-container" id="section-priority">
+				<div class="inner">
+					<h2>Section Priority: All Sections are Not Created Equal</h2>
+					<p class="major">Setting the section priority is a good way to try and make sure sections that need more detail are handled first while more pieces are available. Before I thought to set section priority, the sections were being populated with pieces from top to bottom and left to right. Now the default is radial (highest in the center and decreasing towards the edges). Other methods of setting section priority include edge detection, face dectection, or manual selection.</p>
+				</div>
+				<div class="inner zero-padding-top">
+					<div class="gallery style2 medium lightbox onscroll-fade-in">
+						<article>
+							<a href="images\mosaicmaker\climbing\07_mi5_prZero.png" class="image">
+								<img src="images\mosaicmaker\climbing\07_mi5_prZero.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>No Section Priority</h3>
+								<p>The algorthm goes top to bottom and left to right when all sections have the same priority</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+						<article>
+							<a href="images\mosaicmaker\climbing\08_prZero_prRadial.png" class="image">
+								<img src="images\mosaicmaker\climbing\08_prZero_prRadial.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>Radial Section Priority</h3>
+								<p>Starts at the center and decreases "radially" outwards</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+					</div>
+				</div>
+				<a href="#target-image" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+			</section>
+
+
+			<section class="wrapper style1 align-center gallery-container" id="target-image">
+				<div class="inner">
+					<h2>Comparison to Target Image</h2>
+					<p class="major">And Finally, here is a comparison to the target-image. There are still tons of tweaks that can be done in addition to ones already mentioned, such as pinning pieces and rerunning the algorthm, adjusting individual error weights for rgb values, adding more pieces to the library, trying different reducing functions and error functions, different section priorities, updating specific sections post-creation using new settings, etc, etc, etc.</p>
+				</div>
+				<div class="inner zero-padding-top">
+					<div class="gallery style2 medium lightbox onscroll-fade-in">
+						<article>
+							<a href="images\mosaicmaker\climbing\08_prZero_prRadial.png" class="image">
+								<img src="images\mosaicmaker\climbing\08_prZero_prRadial.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>"Final" Mosaic</h3>
+								<p>In reality there is tons more you can do</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+						<article>
+							<a href="images\mosaicmaker\climbing\09_climbingTarget.png" class="image">
+								<img src="images\mosaicmaker\climbing\09_climbingTarget.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>Target Image</h3>
+								<p>A picture of me climbing</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+					</div>
+				</div>
+				<a href="#section-priority-examples" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+			</section>
+
+			
+			<section class="banner style1 orient-left content-align-center image-position-center fullscreen onscroll-image-fade-in" id="section-priority-examples">
+				<div class="content">
+					<h1>Expanding on Section Priority</h1>
+					<p>Let's take a look at a couple of examples that take advantage of section priority to improve fidelity</p>
+
+				</div>
+				<div class="image">
+					<img src="images/mosaicmaker/headers/scarjo-face.png" alt="" />
+				</div>
+				<a href="#edge-detection" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+			</section>
+
+
+			<!-- edge detection example -->
+			<section class="wrapper style1 align-center gallery-container" id="edge-detection">
+				<div class="inner">
+					<h2>She's Got an Edge!</h2>
+					<p class="major">Here is an example that uses edge detection to update the section priority. The target, edge detection, and section priority images are shown for reference as well. 
+						<br>
+					Regarding the mosaics, the main differences I notice is the boundary between the face and hair is more obvious, and the lips are a bit more detailed as well, thanks to the high amount of edges found around the teeth.</p>
+				</div>
+				<div class="inner zero-padding-top">
+					<div class="gallery style2 small lightbox onscroll-fade-in">
+						<article>
+							<a href="images\mosaicmaker\section_priority\edge\01-target.jpg" class="image">
+								<img src="images\mosaicmaker\section_priority\edge\01-target.jpg" alt="" />
+							</a>
+							<div class="caption">
+								<h3>Target</h3>
+								<p>My Wife</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+						<article>
+							<a href="images\mosaicmaker\section_priority\edge\02-edges.png" class="image">
+								<img src="images\mosaicmaker\section_priority\edge\02-edges.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>Edges Found</h3>
+								<p>Using the default edge detection algorithm in PIL with a 0.5 radius</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+						<article>
+							<a href="images\mosaicmaker\section_priority\edge\03-anqi-aerial-priority.png" class="image">
+								<img src="images\mosaicmaker\section_priority\edge\03-anqi-aerial-priority.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>Show Priority</h3>
+								<p>A heat map of the section priorities</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+					</div>
+					<br>
+					<div class="gallery style2 medium lightbox onscroll-fade-in">
+						<article>
+							<a href="images\mosaicmaker\section_priority\edge\04-mosaic-radial.png" class="image">
+								<img src="images\mosaicmaker\section_priority\edge\04-mosaic-radial.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>Mosaic with radial priority</h3>
+								<p></p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+						<article>
+							<a href="images\mosaicmaker\section_priority\edge\05-mosaic-edge.png" class="image">
+								<img src="images\mosaicmaker\section_priority\edge\05-mosaic-edge.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>Mosaic with section priority updated using edge detection</h3>
+								<p></p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>							
+					</div>
+				</div>
+				<a href="#face-detection" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+			</section>
+
+
+			<!-- face recognition example -->
+			<section class="wrapper style1 align-center gallery-container" id="face-detection">
+				<div class="inner">
+					<h2>He's Got a Face!</h2>
+					<p class="major">Here is an example showing the use of facial recognition for updating section priorities. I set the max instances to 2 so that the affect would be more pronounced. 
+						<br>
+					The right eye (from your point of view) definitely looks clearer, and the area under the mouth is closer in color to the target image as well. </p>
+				</div>
+				<div class="inner zero-padding-top">
+					<div class="gallery style2 small lightbox onscroll-fade-in">
+						<article>
+							<a href="images\mosaicmaker\section_priority\face\01-james-square.png" class="image">
+								<img src="images\mosaicmaker\section_priority\face\01-james-square.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>Target</h3>
+								<p>Me</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+						<article>
+							<a href="images\mosaicmaker\section_priority\face\02-james-square-recognition.png" class="image">
+								<img src="images\mosaicmaker\section_priority\face\02-james-square-recognition.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>Features Found</h3>
+								<p>Using haar cascades to find facial features</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+						<article>
+							<a href="images\mosaicmaker\section_priority\face\03-james-square-priority.png" class="image">
+								<img src="images\mosaicmaker\section_priority\face\03-james-square-priority.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>Show Priority</h3>
+								<p>A heat map of the section priority</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+					</div>
+					<br>
+					<div class="gallery style2 medium lightbox onscroll-fade-in">
+						<article>
+							<a href="images\mosaicmaker\section_priority\face\04-james-square-radial.png" class="image">
+								<img src="images\mosaicmaker\section_priority\face\04-james-square-radial.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>Radial Priority</h3>
+								<p>Uses the default priority</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>
+						<article>
+							<a href="images\mosaicmaker\section_priority\face\05-james-square-face.png" class="image">
+								<img src="images\mosaicmaker\section_priority\face\05-james-square-face.png" alt="" />
+							</a>
+							<div class="caption">
+								<h3>Object Priority</h3>
+								<p>Updates the default priority by increasing the priority of sections that fall partially or fully within the boundaries of identified objects</p>
+								<ul class="actions fixed">
+									<li><span class="button small">Details</span></li>
+								</ul>
+							</div>
+						</article>							
+					</div>
+				</div>
+				<a href="#other-ideas" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+			</section>
+
+
+			<section class="banner style1 orient-left content-align-center image-position-center fullscreen onscroll-image-fade-in" id="other-ideas">
+				<div class="content">
+					<h1>Some Other Ideas</h1>
+					<p>Some other fun/silly things I've done with this project</p>
+
+				</div>
+				<div class="image">
+					<img src="images\mosaicmaker\headers\cat-eye.png" alt="" />
+				</div>
+				<a href="#self-mosaic" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+			</section>
+
+
+			<section class="spotlight style1 orient-right content-align-center image-position-center onscroll-image-fade-in" id="self-mosaic">
+				<div class="content">
+					<h2>Creating Mosaics from Their Own Sections</h2>
+					<p>	To create this mosaic, I divided the target-image into a 16x16 grid of 256 images. I saved those to be used as pieces and created a mosaic using a 32x32 grid.
+						<br>
+					A similar technique was used to create the mosaic all the way at the top of the page</p>
+				</div>
+				<div class="image">
+					<img src="images\mosaicmaker\misc\sunset.png" alt="" />
+				</div>
+				<!-- <a href="#themed-piece-library" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a> -->
+			</section>
+
+
+			<section class="spotlight style1 orient-left content-align-center image-position-center onscroll-image-fade-in" id="themed-piece-library">
+				<div class="content">
+					<h2>Extremely Specific Piece Libraries</h2>
+					<p>My friend likes taking pictures of no climbing signs so I made one of him from only pictures of no climbing signs I found while travelling. Although my friend is recognizable to people that know him, the fidelity is quite low. But the number of pieces is also low!
+					</p>
+				</div>
+				<div class="image">
+					<img src="images\mosaicmaker\misc\noclimbing.png" alt="" />
+				</div>
+				<!-- <a href="#music-video" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a> -->
+			</section>
+
+
+			<section class="wrapper style1 align-center gallery-container" id="music-video">
+				<div class="inner">
+					<h2>Demo Video</h2>
+					<p class="major">As the climbing section did, though much more breifly, this video demostrates the affect that changing certain parameters has on mosaic fidelity. The terminology may be slightly different because I made the video a while ago.</p>					 
+				</div>
+				<div class="inner zero-padding-top">
+							<div class="video-container">
+								<video controls>
+									<source src="video/mosaicmaker/MosaicDemoMusic.mp4" type="video/mp4">
+									Your browser does not support the video tag.
+								</video>
+							</div>
+				</div>
+				<a href="#the-end" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+			</section>
+
+
+			<section class="wrapper style1 align-center" id="the-end">
+				<div class="inner">
+					<h2>The End!</h2>
+					<p class="major">There are still many capabilities I could continue demonstrating such as different reducing and error functions, the creation of the piece libraries (and which ones were used for which mosaics), functions to replace/remove/update/edit specific sections or instances of pieces after mosaic creation, creation of an html version of mosaics, etc, etc. But I'm sure if you've made it this far you've had quite enough.</p>
+					<p class="major">The <a target="_blank" href="https://github.com/wantsomechocolate/MosaicMaker">repo</a></p>					 
+				</div>
+				<!-- <a href="#footer" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a> -->
+			</section>
+
+
+			<!-- Footer -->
+			<footer class="wrapper style1 align-center" id="footer">
+				<div class="inner">
+					<ul class="icons ul-custom">
+						<li>
+							<a target="_blank" href="https://github.com/wantsomechocolate" class="icon brands style2 fa-github">
+								<span class="label">Github</span>
+							</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://stackoverflow.com/users/1937423/wantsomechocolate" class="icon brands style2 fa-stack-overflow">
+								<span class="label">StackOverflow</span>
+							</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://www.linkedin.com/in/james-mcglynn/" class="icon brands style2 fa-linkedin-in">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://leetcode.com/wantsomechocolate/" class="icon style2 icon-test icon-custom style2-custom">
+								<i class="label-custom cib-leetcode"></i>
+							</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://www.facebook.com/JGlynnius" class="icon brands style2 fa-facebook-f">
+								<span class="label">Facebook</span>
+							</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://www.instagram.com/wantsomegraham/" class="icon brands style2 fa-instagram">
+								<span class="label">Instagram</span>
+							</a>
+						</li>
+					</ul>
+					<p>Design: <a class="link-custom" href="https://html5up.net">HTML5 UP</a><br>&copy; Untitled. </p>
+				</div>
+			</footer>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/custom.js"></script>
+
+	</body>
+</html>
