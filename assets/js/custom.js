@@ -60,6 +60,18 @@
 
 // Stop bg from scrolling when a modal is open
 
+$('html').click(function() {
+  $(".floating-nav-icons-container").removeClass("is-visible");
+  $(".floating-nav-bg").removeClass("is-visible");
+});
 
+$('.floating-nav-trigger').click(function(event){
+     event.stopPropagation();
+});
 
+//floating navigation
+$('.floating-nav-trigger a').click(function(e){
+  $(".floating-nav-icons-container").toggleClass("is-visible");
+  $(".floating-nav-bg").toggleClass("is-visible");
+})
 

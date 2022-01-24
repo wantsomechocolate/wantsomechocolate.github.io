@@ -13,17 +13,32 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		<link rel="stylesheet" href="assets/css/floating-nav.css" />
 	</head>
 
 	<body class="is-preload">
+
+		<!-- Floating Nav -->
+		<div class="floating-nav">
+			<div class = "floating-nav-bg"></div>
+			<div class = "floating-nav-icons-container">
+				<ul>
+					<li><a class="nav smooth-scroll" href="#welcome"><span>Top</span><i class="nav fas fa-chevron-up"></i></a></li>
+					<li><a class="nav" href="index.html"><span>Home</span><i class="nav fas fa-home"></i></a></li>
+					<li><a class="nav" href="about-me.html"><span>About Me</span><i class="nav fas fa-portrait"></i></a></li>
+					<li><a class="nav" href="mosaic-maker.html"><span>Another Project</span><i class="nav fas fa-chevron-right"></i></a></li>
+					<li><a class="nav smooth-scroll" href="#footer"><span>Bottom</span><i class="nav fas fa-chevron-down"></i></a></li>
+				</ul>
+			</div>
+			<div class = "floating-nav-trigger"><a class="floating-nav-trigger-style"><i class="fas fa-bars"></i></a></div>
+		</div>
 
 
 		<!-- Wrapper -->
 		<div id="wrapper" class="divided">
 
-
 			<!-- Welcome -->
-			<section class="banner style5 welcome-banner-custom orient-left content-align-center image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+			<section class="banner style5 welcome-banner-custom orient-left content-align-center image-position-right fullscreen onload-image-fade-in onload-content-fade-right" id="welcome">
 				<div class="content">
 					<h1>Welcome</h1>
 					<p class="major">A Portfolio of (Mostly) Personal Projects</p>
@@ -40,11 +55,11 @@
 				<div class="content">
 					<h2 class="header-custom">Blank of The Day</h2>
 					<p><i>Python, Django, Heroku, AWS S3</i></p>
-					<p>A silly project using the Twitter and Google Custom Search APIs</p>
-					<p>(It takes a second to load... free hosting and all that)</p>
+					<p>Use the Twitter and Google Custom Search APIs to create automatic daily posts about specific hashtags</p>
 					<ul class="actions stacked ul-custom">
-						<li><a target="_blank" href="https://blank-of-the-day.herokuapp.com/" class="button small">Check Out The Site</a></li>
-						<li><a target="_blank" href="https://github.com/wantsomechocolate/blank_of_the_day" class="button small">Check Out The Repo</a></li>
+						<!-- <li><a target="_blank" href="https://blank-of-the-day.herokuapp.com/" class="button small">Check Out The Site</a></li> -->
+						<li><a href="botd.html" class="button small">Detail Page</a></li>
+						<li><a target="_blank" href="https://github.com/wantsomechocolate/blank_of_the_day" class="button small">Github Repo</a></li>
 					</ul>
 				</div>
 				<div class="image">
@@ -59,10 +74,10 @@
 				<div class="content">
 					<h2 class="header-custom">Mosaic Maker</h2>
 					<p><i>Python, PIL, Numpy</i></p>
-					<p>Generate a photo-mosaic based on a target image with an emphasis on customizing the result</p>
+					<p>Generate photo-mosaics based on a target image with an emphasis on customizing the result</p>
 					<ul class="actions stacked ul-custom">
-						<li><a target="_blank" href="mosaic-maker.html" class="button small">Check Out Examples</a></li>
-						<li><a target="_blank" href="https://github.com/wantsomechocolate/MosaicMaker" class="button small">Check Out The Repo</a></li>
+						<li><a href="mosaic-maker.html" class="button small">Detail Page</a></li>
+						<li><a target="_blank" href="https://github.com/wantsomechocolate/MosaicMaker" class="button small">Github Repo</a></li>
 					</ul>
 				</div>
 				<div class="image">
@@ -80,11 +95,11 @@
 					<p>Designed and implemented a <a class="link-custom" target="_blank" href="https://www.nyserda.ny.gov/All-Programs/Real-Time-Energy-Management"> NYSERDA Approved Real Time Energy Management System</a></p>
 
 					<ul class="actions stacked ul-custom">
-						<li><a href="bats.html" class="button small">Learn More</a></li>
+						<li><a href="bats.html" class="button small">Detail Page</a></li>
 					</ul>
 				</div>
 				<div class="image">
-					<img src="images/index/bats.jpg" alt="" />
+					<img src="images/index/rtem.png" alt="" />
 				</div>
 				<a href="#three-muses-glass" class="goto-next goto-next-style2 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
 			</section>
@@ -98,68 +113,48 @@
 					<p>An online store that (at one time) had a cart, guest checkout, shipping costs, sandbox payments, emailed receipts, order histories, and inventory/product management</p>
 					<p>Stripe gave me a free shirt and I found a bug in Web2py during this project!</p>
 					<ul class="actions stacked ul-custom">
-						<li><a target="_blank" href="https://threemusesglass.herokuapp.com/" class="button small">Check Out The Site</a></li>
-						<li><a target="_blank" href="https://github.com/wantsomechocolate/3Muses" class="button small">Check Out The Repo</a></li>
+						<!-- <li><a target="_blank" href="https://threemusesglass.herokuapp.com/" class="button small">Check Out The Site</a></li> -->
+						<li><a href="threemusesglass.html" class="button small">Detail Page</a></li>
+						<li><a target="_blank" href="https://github.com/wantsomechocolate/3Muses" class="button small">Github Repo</a></li>
 					</ul>
 				</div>
 				<div class="image">
 					<img src="images/index/threemusesglass.jpg" alt="" />
 				</div>
-				<a href="#future" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				<a href="#footer" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
 			</section>
 
 
-			<!-- Future -->
-			<section class="banner banner-custom-padding style5 orient-left content-align-center image-position-center fullscreen onscroll-image-fade-in color6" id="future">
-			  	<div class="content-container-custom">
-					<div class="content">
-						<h2 class="header-custom">Some Future Projects</h2>
-						<p><i>Below are a few projects I'm thinking about to guide my future development</i></p>
 
-						<h3 class="header-custom">Social Queue</h3>
-						<p>I've always wanted to make an app. Social Queue aims to help facilitate interactions with friends: reminders to reach out, that you're in the same city, who jives with who and who doesn't, etc.</p>
-
-						<h3 class="header-custom">DIY Home Automation</h3>
-						<p>Having your code control things other than 1s and 0s is exciting for me. Given my experience with commercial building automation, home automation projects seem like they might be on the horizon for me.</p>							
-
-						<h3 class="header-custom">Force Myself to Learn Rust</h3>
-						<p>The meta-project</p>
-					</div>
-			  	</div>
-				<div class="image">
-					<img src="images/index/future-banner.jpg" alt="" />
-				</div>
-			</section>
 
 
 			<!-- Footer -->
-			<footer class="wrapper style1 align-center" id="footer">
-				<div class="inner">
+			<section class="banner style3 orient-left content-align-center image-position-center fullscreen onscroll-image-fade-in" id="footer">
+				<div class="content">
+					<h2 class="header-custom">James McGlynn</h2>
+					<p><i>Engineer, Programmer</i></p>
+					<p></p>
 					<ul class="icons ul-custom">
 						<li>
 							<a target="_blank" href="https://github.com/wantsomechocolate" class="icon brands style2 fa-github">
-								<span class="label">Github</span>
+								<i class="label">Github</i>
 							</a>
 						</li>
-
 						<li>
 							<a target="_blank" href="https://stackoverflow.com/users/1937423/wantsomechocolate" class="icon brands style2 fa-stack-overflow">
-								<span class="label">StackOverflow</span>
+								<i class="label">StackOverflow</i>
 							</a>
 						</li>
-
 						<li>
 							<a target="_blank" href="https://www.linkedin.com/in/james-mcglynn/" class="icon brands style2 fa-linkedin-in">
-								<span class="label">LinkedIn</span>
+								<i class="label">LinkedIn</i>
 							</a>
 						</li>
-
 						<li>
 							<a target="_blank" href="https://leetcode.com/wantsomechocolate/" class="icon style2 icon-test icon-custom style2-custom">
 								<i class="label-custom cib-leetcode"></i>
 							</a>
 						</li>
-
 						<li>
 							<a target="_blank" href="https://www.facebook.com/JGlynnius" class="icon brands style2 fa-facebook-f">
 								<span class="label">Facebook</span>
@@ -171,11 +166,12 @@
 								<span class="label">Instagram</span>
 							</a>
 						</li>
-
 					</ul>
-					<p>Design: <a class="link-custom" href="https://html5up.net">HTML5 UP</a><br>&copy; Untitled. </p>
 				</div>
-			</footer>
+				<div class="image">
+					<img src="images/index/portrait.jpg" alt="" />
+				</div>
+			</section>
 
 		</div>
 
@@ -186,7 +182,8 @@
 		<script src="assets/js/browser.min.js"></script>
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+		<script src="assets/js/main.js"></script>		
+		<script src="assets/js/custom.js"></script>
 
 	</body>
 </html>

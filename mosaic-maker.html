@@ -5,7 +5,7 @@
 
 <html>
 	<head>
-		<title>Mosaic Maker</title>
+		<title>James McGlynn</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/coreui-icons-master/css/all.min.css" />
@@ -13,15 +13,32 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		<link rel="stylesheet" href="assets/css/floating-nav.css" />
 	</head>
 
 	<body class="is-preload">
+
+		<!-- Floating Nav -->
+		<div class="floating-nav">
+			<div class = "floating-nav-bg"></div>
+			<div class = "floating-nav-icons-container">
+				<ul>
+					<li><a class="nav smooth-scroll" href="#welcome"><span>Top</span><i class="nav fas fa-chevron-up"></i></a></li>
+					<li><a class="nav" href="index.html"><span>Home</span><i class="nav fas fa-home"></i></a></li>
+					<li><a class="nav" href="about-me.html"><span>About Me</span><i class="nav fas fa-portrait"></i></a></li>
+					<li><a class="nav" href="mosaic-maker.html"><span>Another Project</span><i class="nav fas fa-chevron-right"></i></a></li>
+					<li><a class="nav smooth-scroll" href="#footer"><span>Bottom</span><i class="nav fas fa-chevron-down"></i></a></li>
+				</ul>
+			</div>
+			<div class = "floating-nav-trigger"><a class="floating-nav-trigger-style"><i class="fas fa-bars"></i></a></div>
+		</div>
+
 
 		<!-- Wrapper -->
 		<div id="wrapper" class="divided">
 
 			<!-- Mosaic Maker Banner -->
-			<section class="banner style1 orient-left content-align-center image-position-left fullscreen onload-image-fade-in onload-content-fade-right" id="top">
+			<section class="banner style1 orient-left content-align-center image-position-left fullscreen onload-image-fade-in onload-content-fade-right" id="welcome">
 				<div class="content">
 					<h1>Mosaic Maker</h1>
 					<p class="major">Examples and Explanations</p>
@@ -106,7 +123,7 @@
 						</article>					
 					</div>
 				</div>
-				<a href="#library-size" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				<!-- <a href="#library-size" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a> -->
 			</section>
 
 
@@ -147,7 +164,7 @@
 						</article>					
 					</div>
 				</div>
-				<a href="#section-granularity" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				<!-- <a href="#section-granularity" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a> -->
 			</section>
 
 
@@ -186,7 +203,7 @@
 						</article>
 					</div>
 				</div>
-				<a href="#randomization" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				<!-- <a href="#randomization" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a> -->
 			</section>
 
 
@@ -223,7 +240,7 @@
 						</article>					
 					</div>
 				</div>
-				<a href="#neighborhood-size" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				<!-- <a href="#neighborhood-size" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a> -->
 			</section>
 
 
@@ -262,7 +279,7 @@
 						</article>
 					</div>
 				</div>
-				<a href="#max-instances" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				<!-- <a href="#max-instances" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a> -->
 			</section>
 
 
@@ -301,7 +318,7 @@
 						</article>
 					</div>
 				</div>
-				<a href="#section-priority" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				<!-- <a href="#section-priority" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a> -->
 			</section>
 
 
@@ -338,7 +355,7 @@
 						</article>
 					</div>
 				</div>
-				<a href="#target-image" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				<!-- <a href="#target-image" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a> -->
 			</section>
 
 
@@ -467,7 +484,7 @@
 						</article>							
 					</div>
 				</div>
-				<a href="#face-detection" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+				<!-- <a href="#face-detection" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a> -->
 			</section>
 
 
@@ -611,29 +628,32 @@
 				<div class="inner">
 					<h2>The End!</h2>
 					<p class="major">There are still many capabilities I could continue demonstrating such as different reducing and error functions, the creation of the piece libraries (and which ones were used for which mosaics), functions to replace/remove/update/edit specific sections or instances of pieces after mosaic creation, creation of an html version of mosaics, etc, etc. But I'm sure if you've made it this far you've had quite enough.</p>
-					<p class="major">The <a target="_blank" href="https://github.com/wantsomechocolate/MosaicMaker">repo</a></p>					 
+					<a target="_blank" href="https://github.com/wantsomechocolate/MosaicMaker" class="button small">Github Repo</a>				 
 				</div>
 				<!-- <a href="#footer" class="goto-next goto-next-style1 smooth-scroll"><i class="fas fa-chevron-down"></i></a> -->
 			</section>
 
 
 			<!-- Footer -->
-			<footer class="wrapper style1 align-center" id="footer">
-				<div class="inner">
+			<section class="banner style3 orient-left content-align-center image-position-center fullscreen onscroll-image-fade-in" id="footer">
+				<div class="content">
+					<h2 class="header-custom">James McGlynn</h2>
+					<p><i>Engineer, Programmer</i></p>
+					<p></p>
 					<ul class="icons ul-custom">
 						<li>
 							<a target="_blank" href="https://github.com/wantsomechocolate" class="icon brands style2 fa-github">
-								<span class="label">Github</span>
+								<i class="label">Github</i>
 							</a>
 						</li>
 						<li>
 							<a target="_blank" href="https://stackoverflow.com/users/1937423/wantsomechocolate" class="icon brands style2 fa-stack-overflow">
-								<span class="label">StackOverflow</span>
+								<i class="label">StackOverflow</i>
 							</a>
 						</li>
 						<li>
 							<a target="_blank" href="https://www.linkedin.com/in/james-mcglynn/" class="icon brands style2 fa-linkedin-in">
-								<span class="label">LinkedIn</span>
+								<i class="label">LinkedIn</i>
 							</a>
 						</li>
 						<li>
@@ -646,15 +666,18 @@
 								<span class="label">Facebook</span>
 							</a>
 						</li>
+
 						<li>
 							<a target="_blank" href="https://www.instagram.com/wantsomegraham/" class="icon brands style2 fa-instagram">
 								<span class="label">Instagram</span>
 							</a>
 						</li>
 					</ul>
-					<p>Design: <a class="link-custom" href="https://html5up.net">HTML5 UP</a><br>&copy; Untitled. </p>
 				</div>
-			</footer>
+				<div class="image">
+					<img src="images/index/portrait.jpg" alt="" />
+				</div>
+			</section>
 
 		</div>
 
@@ -665,7 +688,7 @@
 		<script src="assets/js/browser.min.js"></script>
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+		<script src="assets/js/main.js"></script>		
 		<script src="assets/js/custom.js"></script>
 
 	</body>
