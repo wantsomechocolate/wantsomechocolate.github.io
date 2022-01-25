@@ -278,3 +278,7 @@
 	footer{
 		height: 100vh;
 	}
+
+	.spotlight-fullscreen{
+		min-height: 100vh;
+	}
