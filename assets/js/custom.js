@@ -58,8 +58,10 @@
   })
 
 
-// Stop bg from scrolling when a modal is open
 
+
+
+//floating navigation
 $('html').click(function() {
   $(".floating-nav-icons-container").removeClass("is-visible");
   $(".floating-nav-bg").removeClass("is-visible");
@@ -69,9 +71,44 @@ $('.floating-nav-trigger').click(function(event){
      event.stopPropagation();
 });
 
-//floating navigation
 $('.floating-nav-trigger a').click(function(e){
   $(".floating-nav-icons-container").toggleClass("is-visible");
   $(".floating-nav-bg").toggleClass("is-visible");
+
+  $(".floating-gh-trigger").toggleClass("is-visible");
+
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// $(window).scroll(function(e){
+//   if ($(this).scrollTop() > 200){ // if you are below the scroll threshold - I want to give it the css to be on the side
+//     $('.travelling-github').css({
+//       'bottom':0,
+//     });
+//     $('.travelling-git-hub-container').addClass('side-bar')
+//   } else { // not sidebar
+//     $('.travelling-github').css({
+//       'bottom':$(this).scrollTop(),
+//       'transition-duration': '0s',
+//     });
+//     $('.travelling-git-hub-container').removeClass('side-bar')
+//   }
+// });
+
+
+
+
 

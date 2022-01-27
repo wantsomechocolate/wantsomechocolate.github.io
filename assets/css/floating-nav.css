@@ -20,7 +20,7 @@
 	.floating-nav-bg.is-visible{
 		opacity: .4;
 		width: 12em;
-		height: 15em;
+		height: 17em;
 		bottom: 1em;
 		right: 1em;
 	}
@@ -72,7 +72,7 @@
 	.floating-nav-icons-container.is-visible{
 		opacity: 1;
 		width: 4em;
-		height: 15em;
+		height: 17em;
 		bottom: 1em;
 		right: 1em;
 	}
@@ -124,4 +124,77 @@
 	.floating-nav-icons-container a{
 		text-decoration: none;
 		color: white;
+		display: block;
+		width: 100%;
 	}
+
+
+		.floating-nav-icons-container li:hover a i{
+			transform: scale(1.25);
+			transition-property: transform;
+			transition-duration: 0.25s;
+		}
+
+		.floating-nav-icons-container li:hover a span{
+			/*transform: scale(1.25);*/
+			/*transition-property: transform;*/
+			/*transition-duration: 0.25s;*/
+			font-weight: 900 !important;
+		}
+
+
+/*##########################################*/
+
+/*background element*/
+.floating-gh-bg{
+	display: block;
+	z-index: 3;
+	border-radius: 2em;
+	box-shadow: inset 0 0 0 1px rgb(0 0 0 / 20%);
+	position: fixed;
+    background: black;
+
+    /*transition properties*/
+    opacity: 0;
+	width: 0em;
+	height: 0em;
+    bottom: 3em;
+    right: 3em;
+    transition-property: width, height, bottom, right, opacity;
+    transition-duration: 1s;
+}
+	.floating-gh-bg.is-visible{
+		opacity: .4;
+		width: 12em;
+		height: 15em;
+		bottom: 1em;
+		right: 1em;
+	}
+
+
+/*trigger element*/
+/*	.floating-gh-trigger a{
+		text-decoration: none;
+		text-align: center !important;
+		border: 0;
+	    display: block;
+	    overflow: hidden;
+	    white-space: nowrap;
+	    z-index: 5;
+	    opacity: .5;
+	    line-height: 4em;
+	    width: 4em;
+	    height: 4em;
+	    border-radius: 4em;
+	    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 20%);
+	    position: fixed;
+	    bottom: 6em;
+	    right: 1em;
+	}
+
+	.floating-gh-trigger-style{
+		background: black;
+		color: white;
+	}
+*/
+

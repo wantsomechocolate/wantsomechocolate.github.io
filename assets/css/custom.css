@@ -282,3 +282,110 @@
 	.spotlight-fullscreen{
 		min-height: 100vh;
 	}
+
+
+/*Header Bar*/
+/*	.header-bar .content{
+		height: 8em;
+		position: fixed !important;
+		top: 0;
+		z-index: 5;
+		background: white;	
+		width: 100vw !important;
+		overflow: hidden;
+		font-size: 12;
+	}
+
+	.header-bar .image{
+		position: fixed;
+		visibility: hidden;
+
+	}*/
+
+/*.travelling-github{
+    transition-property: width, height, bottom, right, opacity, top, left, position;
+    transition-duration: 2s;
+    z-index: 5 !important;
+
+	left: 218.796875px;
+	top: 69.9375px;
+}
+
+.travelling-github.side-bar{
+    transition-property: width, height, bottom, right, opacity, top, left, position;
+    transition-duration: 2s;
+	position: fixed;
+	z-index: 5;
+	top: 80em;
+	left: 85em;
+}
+
+.travelling-github_{
+    transition-property: width, height, bottom, right, opacity, top, left !important;
+    transition-duration: 2s !important;
+    z-index: 5 !important;
+
+	position: absolute;
+	left: 218.796875px;
+	top: 269.9375px;
+}
+
+.travelling-github_.side-bar{
+    transition-property: width, height, bottom, right, opacity, top, left !important;
+    transition-duration: 2s !important;
+    z-index: 5;
+	position: fixed !important;
+	top: 80em;
+	left: 85em;
+}*/
+
+/*.travelling-git-hub-container{
+	transition-property: width, height, bottom, right, opacity, top, left;
+	transition-duration: 2s;
+	position: fixed;
+	left: 218.796875px;
+	z-index: 5;
+	top: 0px;
+	height: 310px;
+	width: 9em;
+}
+
+.travelling-git-hub-container.side-bar{
+    transition-property: width, height, bottom, right, opacity, top, left, position;
+	top: 30em;
+	left:51em;	
+}
+
+.travelling-github{
+	transition-property: width, height, bottom, right, opacity, top, left;
+	transition-duration: 1s;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}*/
+
+/*	.header-bar .content a.travel1{
+		position: fixed;
+		z-index: 5;
+		right: 1em;
+		bottom: 7em;
+		width: 4em;
+		height: 4em;
+	}*/
+
+
+
+/*	.header-bar .content a:nth-child(1){
+		bottom: 7em;
+	}
+
+	.header-bar .content a:nth-child(2){
+		bottom: 16em;*/
+
+#welcome{
+	overflow: hidden;
+}
+
+.absolute{
+	position: absolute;
+}
