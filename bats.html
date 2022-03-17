@@ -137,3 +137,117 @@
 
 	</body>
 </html>
+
+Most relavant github
+https://github.com/wantsomechocolate/WantsomeDashboards/blob/master/applications/dashboard/controllers/default.py
+
+
+
+The Setup:
+An employee came to my old company and brought with him a potential service line and some existing clients from his previous company that was dissolving.
+My company at the time decided to pickup the service line, but rejected the opportunity to buy the existing software from this new employee's old company. And so it began.
+
+
+The Service:
+The service was referred to as Bill Auditing and Tenant Submetering (BATS for short) and consisted of combining monthly utility data and quarter-hourly meter data to generate energy bills for our client's tenants. 
+
+
+
+The Journey:
+
+Step One: Retrieve the Data
+
+The first thing I needed to figure out was how to get the quarter-hourly data off the field servers. I used the technologies I was most comfortable with and setup a heroku app in order to accept logfiles via http push from the field servers. All of the documentation I found was for PHP, so this was a lot of trial and error for me, but I managed to start saving logfiles in S3 buckets. Not very useful on it's own, but it's a start. 
+
+
+Step 1.5: Try to show off to coworkers
+
+After I started saving files in AWS S3, I wanted to make some flashy dashboards with the data to show that I was able to succesfully getting data of the servers. I thought after having access to the logfiles this would be no problem, but it turns out I was not equipped to deal with field_storage_objects, in memory files, gzip and the following line of code took a ludicrous amount of time and generous amount of googling for me to come up with:
+
+
+	file_handle=gzip.GzipFile(fileobj=io.BytesIO(field_storage_object.value), mode='r')
+
+But after that I was able to actually open the files, store some of the data in dynamo db and create some charts to show my coworkers! Then I got charged $30 for one month and quickly shut the whole operation down. But things were already set in motion. 
+
+
+Step 2: 
+
+
+
+
+
+
+
+
+
+
+
+
+Bill Auditing and Tenant Submetering (BATS)
+
+Gathering Utility Data:
+
+	Replaced existing infrastucture that was using imacros with a more flexible, powerful (and free) one using python and selenium. Designed so that anyone could write a script and put it in a folder, add a row to a configuration table, and the script would automatically be setup to run on a schedule, retry after failure, and log errors. Scripts were also allowed to loop within themselves so that single logins were used for sites where data from multiple accounts or meters was needed. 
+
+Accepting Logfiles from Field Servers:		
+	Developed web application to replace the existing one that was to be shutdown. Web application needed to recieve logfiles via http push from the field servers (which aggregated data from energy meters). Documentation for getting data off these field servers was either missing or for PHP only. Did a lot of exploratory development during this phase which included my first foray into EC2, elastic beanstalk, and dynamo db.
+	
+
+Used Skyspark and Axon to develop a system to bring in this data and distribute it to tenants
+	Meter type classification with regular expressions
+		Meter data didn't contain a stripped down uniform model number, and many model numbers that were unique contained the same points, which for this purpose meant they were ostensibly the same.
+		Made a list of regular expressions that mapped to standardized model names to be used with determining what point to collect from each meter. 
+
+	SubID Config (Determining what field to collect)
+		ID was used to refer to the number associated with a physical device that the field-server would produce a logfile for. To refer to individual columns of the logfile, the term SubID was used.
+
+		For some logfiles, columns were different metrics pertaining to a single physical device, for others, each column referred to a different physical device.
+
+		I didn't want to have to specify which fields to collect for every meter because a new site could have hundreds. I devised a method to look for a matching configuration in the SubID configuration table to determine which fields to collect. The system would go from most specific (site, meter type, meter id, and sub_id all match) to least specific (nothing matches). This method worked well because it allowed default behaviors to be defined and then overridden. 
+
+
+	Calculated Meters
+		Management wanted people to be able to create calculated meters without the use of programming. I made a database table to store calculation instructions and an axon function to interpret those instructions. This system was able to handle multi-step calculations using grouping and sorting of calculation instructions, as well as calculated meters that depended upon other calculated meters using a priority.
+
+
+	Parallel Hierarchy Tagging Structure for Automatic Distribution of Energy Data To Tenants
+		In order to bill the tenants, you first have to calculate how much energy should be attributed to each of them. Because building layouts change faster than electiricity and metering infrastructure inside a building, this is rarely a straightforward process. 
+
+		Most of the time, if there is any area that a tenant uses for any reason, the landloard wants them to pay their share of the energy used in that area. For space leased by the tenant, all energy consumed in the space is attributed to that tenant. For parking lots, hallways, communal spaces, etc., the energy needs to be divided up in some fair way according to which tenants should be included. 
+
+		Some energy data isn't attributed to a leased space at all and still requires distribution, for example, HVAC equipemnt and roof antanneas. 
+
+		There are many subtleties and complications that can arise with different building layouts, but I feel I was able to capture a huge amount of generality and flexibility with the following method:
+
+		Here is the hierachy:
+		Portfolio -> Site -> (Tenant, Zone, Floor) -> Meter -> Point
+
+		Note that Tenant, Zone, and Floor have the same status, so there are essentially three hiearchies that differ in one spot. 
+		Using this hierarchy and allowing relationships to exist between all levels of the heiarchy (i.e. children can have multiple parents from anywhere in the heirachy) allowed for automatic distribution from meter data contained in points to make it's way to the tenant, provided that objects in the tree were tagged appropriately. 
+
+
+	DistibuteUsage
+		The culmination of all of the above efforts was a function called Distribute Usage (great name) that took all the above data and configurations and output a table with a row for every allocation of energy data. Data could come from the site, be directly associated with a tenant, be atributed to a space linked to that tenant, or a floor that that tenant has space on, or an arbitrary collection of spaces of which that tenant is a part of (I called them zones), and more! This table was great because it had all of these sources broken down by their individual contibution so it was easy to track where all the consumption billed to a given tenant was coming from. My coworkers then took this result as well as the utility rates from the web scraping and used the information to generate tenant utiliy bills for our clients (property managers and building owners) to use for billing their tenants. 
+
+
+Skyspark
+
+
+
+NYSERDA Real Time Energy Management
+	Realized after the above efforts, that becoming a NYSERDA RTEM service provider was only a few technically challenging but plausible steps away. 
+	Built on the previously developed infrastructure, I was the sole technical resource for adding all required functionality to meet the guidelines for a NYERSERA RTEM Approved Service Provider
+
+	to go from daily updates of tenant electric data to real time (<30 minute delay) collection of more kinds of data
+
+
+
+	to showcase to NYSERDA our ability to fetch real time data 
+
+
+
+
+
+
+
+
