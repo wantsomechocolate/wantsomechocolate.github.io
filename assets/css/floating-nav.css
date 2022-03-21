@@ -142,6 +142,10 @@
 			font-weight: 900 !important;
 		}
 
+		.floating-nav-icons-container a.active{
+			color: aquamarine;
+		}
+
 
 /*##########################################*/
 
