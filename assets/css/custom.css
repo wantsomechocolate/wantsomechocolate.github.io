@@ -237,6 +237,14 @@
 	}
 
 
+	.banner-style5-custom .content{
+		font-weight: 900;
+	}
+
+	.banner-style5-custom .image{
+		opacity: 0.3 !important;
+	}
+
 /* Attempts to add a video without completely breaking the entire template */
 /*	.video-container video {
 		width: 70%;
@@ -328,6 +336,7 @@
 	.spotlight-fullscreen{
 		min-height: 100vh;
 	}
+
 
 
 /*Header Bar*/
@@ -434,4 +443,54 @@
 
 .absolute{
 	position: absolute;
+}
+
+
+		.spotlight.style6{
+			width: 100%;
+			height: 100vh;
+		}
+
+		.spotlight.style6 .image {
+			-moz-flex-grow: 0;
+			-webkit-flex-grow: 0;
+			-ms-flex-grow: 0;
+			flex-grow: 0;
+			-moz-flex-shrink: 0;
+			-webkit-flex-shrink: 0;
+			-ms-flex-shrink: 0;
+			flex-shrink: 0;
+			position: absolute;
+			width: 100% !important;
+			height: 100%;
+			top: 0;
+			left: 0;
+			border-radius: 0;
+			opacity: 0.5;
+		}
+
+			.spotlight.style6 .image img {
+				-moz-object-fit: cover;
+				-webkit-object-fit: cover;
+				-ms-object-fit: cover;
+				object-fit: cover;
+				-moz-object-position: center;
+				-webkit-object-position: center;
+				-ms-object-position: center;
+				object-position: center;
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border-radius: 0;
+			}
+
+
+
+
+.nav.disabled{
+	/*color: gray;*/
+	opacity: 0.5;
 }

@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<!--Story by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)-->
+
+<html>
+	<head>
+		<title>James McGlynn</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/coreui-icons-master/css/all.min.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		<link rel="stylesheet" href="assets/css/floating-nav.css" />
+	</head>
+
+	<body class="is-preload">
+
+		<!-- Floating Nav -->
+		<div class="floating-nav">
+			<div class = "floating-nav-bg"></div>
+			<div class = "floating-nav-icons-container">
+				<ul>
+					<li><a class="nav smooth-scroll" href="#welcome"><span>Top</span><i class="nav fas fa-chevron-up"></i></a></li>
+					<li><a class="nav" href="index.html"><span>Home</span><i class="nav fas fa-home"></i></a></li>
+					<li><a class="nav" href="about-me.html"><span>About Me</span><i class="nav fas fa-portrait"></i></a></li>
+					<li><a class="nav" target = "_blank" href="https://github.com/wantsomechocolate/WantsomeDashboards/blob/master/applications/dashboard/controllers/default.py"><span>Github Repo</span><i class="nav fas cib cib-github"></i></a></li>
+					<li><a class="nav disabled" href="#"><span>Next Project</span><i class="nav fas fa-chevron-right"></i></a></li>
+				</ul>
+			</div>
+			<div class = "floating-nav-trigger"><a class="floating-nav-trigger-style"><i class="fas fa-bars"></i></a></div>
+		</div>
+
+
+		<!-- Wrapper -->
+		<div id="wrapper" class="divided">
+
+			<!-- Mosaic Maker Banner -->
+			<section class="banner style2 orient-left content-align-center image-position-center fullscreen onload-image-fade-in onload-content-fade-right" id="welcome">
+				<div class="content">
+					<h1>Obvius Acquisuite</h1>
+					<p><i>Python, Web2py, Heroku, Elastic Beanstalk, S3, DynamoDB, Postgres, Selenium</i></p>
+					<p class="major">A web application to accept logfiles from field servers via HTTP push</p>
+					<a target="_blank" href="https://github.com/wantsomechocolate/WantsomeDashboards/blob/master/applications/dashboard/controllers/default.py" class="button small wide">Github Repo</a>
+				</div>
+				<div class="image">
+					<img src="images/obvius/skyline1.jpg" alt="" />
+				</div>
+			</section>
+
+
+
+			<section class="banner style1 orient-right content-align-center image-position-center onscroll-image-fade-in fullscreen">
+				<div class="content">
+					<h1>The Setup</h1>
+					<p> One day I heard the new hire had some programming experience. I wasn't working as a software developer, so I was excited to have a coworker that also liked to code. I enthusiastically greated him only to find out that he had only "worked with" programmers before. My bubble was burst, but it turns out he would end up giving me a fantastic excuse to shun the core responsibilties of my job and program instead :)</p>
+
+					<p>Apparently he had part ownership in his previous company called Crunch Energy, which was to be dissolved, and he was bringing their biggest client with him. My company at the time decided to pickup the service line, but rejected the opportunity to buy the existing software used to provide the service. I don't actually know why, but I'd like to think it was because it was written in PHP.</p>
+				</div>
+				<div class="image">
+					<img src="images/obvius/sky.jpg" alt="" />
+				</div>
+			</section>
+
+
+			<section class="banner style1 orient-left content-align-center image-position-center onscroll-image-fade-in fullscreen">
+				<div class="content">
+					<h1>The Service</h1>
+					<p>The service was referred to as Bill Auditing and Tenant Submetering (BATS) and consisted of combining monthly utility data and quarter-hourly submeter data to generate energy bills for the client's tenants. The utility data was being collected using a browser plugin called iMacros that was able to record and parameterize mouse movements and keyboard input in a browser session (which I replaced with python and selenium). And the submeter data was being collected from field servers by the old company's software which was going away soon.</p>
+				</div>
+				<div class="image">
+					<img src="images/obvius/view2.jpg" alt="" />
+				</div>
+			</section>
+
+
+			<section class="banner style1 orient-right content-align-center image-position-center onscroll-image-fade-in fullscreen">
+				<div class="content">
+					<h1>Transition Period</h1>
+					<p>The first thing we needed to do was figure out how to get data off of the field servers without going through the old Crunch Energy servers. We tried using a SaaS from the server manufacturer called Building Manager Online but it didn't fulfill all our needs. We tried using a desktop utility written in C, also provided by the manufacturer, but the port was hard coded and therefore didn't work for all of our installations (I actually did try to request the original files and update/compile/make the script myself with a paramaterized port, but it didn't pan out). Eventually I said, forget this, I'm sure I can make something myself. </p>
+				</div>
+				<div class="image">
+					<img src="images/obvius/view3.jpg" alt="" />
+				</div>
+			</section>
+
+
+
+			<section class="banner style1 orient-left content-align-center image-position-center onscroll-image-fade-in fullscreen">
+				<div class="content">
+					<h1>Taking Matters Into My Own Hands</h1>
+					<p>I used the technologies I was most comfortable with at the time and setup a web2py app in order to accept logfiles via http push from the field servers. I tried both Heroku and Elastic Beanstalk for hosting. The servers were able to be configured to send logfiles to four different places so I was able to point one at both instances of my application for testing without causing any disruptions. All of the documentation I found for the servers was specific to PHP, but after a great deal of trial and error I finally arrived at this line of code that let me treat the logfiles sent by the field servers as python file objects, which was a pretty exciting moment for me.</p>
+					<code>file_handle=gzip.GzipFile( fileobj=io.BytesIO( field_storage_object.value ) , mode='r' )</code>
+					<p></p>
+				</div>
+				<div class="image">
+					<img src="images/obvius/view4.jpg" alt="" />
+				</div>
+			</section>
+
+
+
+			<section class="banner style1 orient-right content-align-center image-position-center onscroll-image-fade-in fullscreen">
+				<div class="content">
+					<h1>Step 2: Get Carried Away</h1>
+					<p>After I finally had a familiar object to work with, I was easily able to start saving the logfiles using AWS S3. I also took care of some more administrative stuff like creating ancillary database tables and additional views for my coworkers to more easily inferface with the application. 
+
+					But I also wanted to show off to the guy that came from Crunch Energy so I started putting the data into DynamoDB as well and creating some live, publically accessible graphs, as if to say I can totally just recreate your entire previous company's software product myself. 
+
+					To keep karmic balance in equilibrium, I was punished for my hubris by racking up $30/mo to my personal AWS account before realizing and deactivating DynamoDB, which was never a necessary part of the project anyway.</p>
+				</div>
+				<div class="image">
+					<img src="images/obvius/view5.jpg" alt="" />
+				</div>
+			</section>
+
+
+
+			<section class="banner style1 orient-left content-align-center image-position-center onscroll-image-fade-in fullscreen">
+				<div class="content">
+					<h1>And They All Lived Happily Ever After</h1>
+					<p>I cleaned up the code and moved the project over to company accounts I created for Heroku, Github, and AWS. And with that, our reliance on Crunch Energy was no more!</p>
+				</div>
+				<div class="image">
+					<img src="images/obvius/view6.jpg" alt="" />
+				</div>
+			</section>
+
+
+			<!-- Footer -->
+			<section class="banner style3 orient-left content-align-center image-position-center fullscreen onscroll-image-fade-in" id="footer">
+				<div class="content">
+					<h2 class="header-custom">James McGlynn</h2>
+					<p><i>Engineer, Programmer</i></p>
+					<p></p>
+					<ul class="icons ul-custom">
+						<li>
+							<a target="_blank" href="https://github.com/wantsomechocolate" class="icon brands style2 fa-github">
+								<i class="label">Github</i>
+							</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://stackoverflow.com/users/1937423/wantsomechocolate" class="icon brands style2 fa-stack-overflow">
+								<i class="label">StackOverflow</i>
+							</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://www.linkedin.com/in/james-mcglynn/" class="icon brands style2 fa-linkedin-in">
+								<i class="label">LinkedIn</i>
+							</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://leetcode.com/wantsomechocolate/" class="icon style2 icon-test icon-custom style2-custom">
+								<i class="label-custom cib-leetcode"></i>
+							</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://www.facebook.com/JGlynnius" class="icon brands style2 fa-facebook-f">
+								<span class="label">Facebook</span>
+							</a>
+						</li>
+
+						<li>
+							<a target="_blank" href="https://www.instagram.com/wantsomegraham/" class="icon brands style2 fa-instagram">
+								<span class="label">Instagram</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="image">
+					<img src="images/index/portrait.jpg" alt="" />
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>		
+		<script src="assets/js/custom.js"></script>
+
+	</body>
+</html>
+
