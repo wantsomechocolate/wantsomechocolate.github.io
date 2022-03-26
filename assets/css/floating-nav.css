@@ -18,7 +18,7 @@
     transition-duration: 1s;
 }
 	.floating-nav-bg.is-visible{
-		opacity: .4;
+		opacity: .7;
 		width: 12em;
 		height: 17em;
 		bottom: 1em;
@@ -175,6 +175,11 @@
 		right: 1em;
 	}
 
+
+.nav.disabled{
+	/*color: gray;*/
+	opacity: 0.5;
+}
 
 /*trigger element*/
 /*	.floating-gh-trigger a{
