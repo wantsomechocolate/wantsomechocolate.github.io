@@ -40,8 +40,8 @@
 			<!-- Mosaic Maker Banner -->
 			<section class="banner style2 orient-left content-align-center image-position-center fullscreen onload-image-fade-in onload-content-fade-right" id="top">
 				<div class="content">
-					<h1>Developing a Web Application to Accept Logfiles from Field Servers via HTTP Push</h1>
-					<p class="major"></p>
+					<h1>Tenant Submeter Allocation on Skyspark</h1>
+					<p class="major">(and Surprise NYSERDA RTEM Approval)</p>
 				</div>
 				<div class="image">
 					<img src="images/bats/skyline1.jpg" alt="" />
@@ -51,49 +51,14 @@
 
 			<section class="banner style5 orient-right content-align-center image-position-center onscroll-image-fade-in fullscreen banner-style5-custom" id="goal">
 				<div class="content">
-					<h1>The History</h1>
-					<p class="major">I worked at a company called CodeGreen for 7 years. Though i was actually just an Energy Efficiency Engineer, I developed many programming projects for the company of various sizes, the culmination of which was this NYSERDA Approved Real Time Energy Management Platform. What follows is some history of the developement and some highlights of the more fun/interesting technical challenges. </p>
+					<h1>Industry Specific Stuff</h1>
+					<p>Skyspark is... </p>
+					<p>RTEM stands for Real Time Energy Management and is a program funded by the New York State Energy &??? Development Authority?..... </p>
 				</div>
 				<div class="image">
 					<img src="images/bats/sky.jpg" alt="" />
 				</div>
 			</section>
-
-
-Project #1: Replace Crunch Energy
-	
-	<h1>Intro</h1>
-	I've never been an actual software engineer or worked at a software engineering company, but software development is a big hobby of mine and I always seem to find myself using the skills I acquire on personal projects at work. For this particular project I used some different tools than I usually do.  
-
-	The Setup</h1>
-	One day I heard the new hire had some programming experience so I enthusiastically greated him hoping to find something to bond over only to find out that he just "worked with" programmers at his last company discussing requirements and such while developing their software product and didn't actually code himself :/
-
-	Although my bubble was burst, we ended up working a lot together. Apparently he had part ownership in his previous company, which was to be disolved, and he was bringing their biggest client with him. 
-
-	My company at the time decided to pickup the service line, but rejected the opportunity to buy the existing software used to provide the service from this new employee's old company. I don't actually know why, but I'd like to think it was because it was written in PHP.
-
-
-	<h1>The Service</h1>
-	<p>The service was referred to as Bill Auditing and Tenant Submetering (BATS) and consisted of combining monthly utility data and quarter-hourly submeter data to generate energy bills for our client's tenants. The utility data was being collected using a browser plugin called iMacros that was able to record and parameterize mouse movements and keyboard input in a browser session. The submeter data was being collected from field servers by the old company's software which was going away soon.</p>
-
-	<h2>My First Mission</h2>
-	<p>	The first thing we needed to do was figure out how to get data off of the field servers without going through the old Crunch Energy servers. We tried using a SaaS from the server manufacturer called Building Manager Online but it didn't fulfill all our needs. We tried using a desktop utility written in C, also provided by the manufacturer, but the port was hard coded and therefore didn't work for all of our installations (I actually did try to request the original files and update/compile/make the script myself with a paramateried port, but I ran into some trouble). 
-
-	Eventually I said, forget this, I'm sure I can make something myself. I used the technologies I was most comfortable with and setup a python app hosted on heroku (I also setup the app on Elastic bean stalk, but decided to stick with Heroku because I felt it was more user friendly in case my non-programmer coworkers ever needed to deal with it) in order to accept logfiles via http push from the field servers. The servers were able to be configured to send logfiles to four different places so I got permission to point one at my application for testing. 
-
-	All of the documentation I found for the servers was specific to PHP, but after tons of trial and error I finally arrived at this line of code that let me treat the logfiles sent by the field serves as python file objects. </p>
-	<code>file_handle=gzip.GzipFile( fileobj=io.BytesIO( field_storage_object.value ) , mode='r' )</code>
-	<p></p>
-
-	Seeing my first logfile come in was a pretty special occasion for me. 
-
-	<h2>Step 2: Get Carried Away</h2>
-	<p> After I finally had a familiar object to work with, I saved the logfiles to AWS S3 before anything bad could happen to them (if you sucessfully recieve the logfiles they get deleted off the server). This ability to retrieve and save the logfiles in a python web application was used by the company from then on, but I also wanted to show off to my coworker so I started putting the data directly into Dynamo DB so I could make some graphs to show them, as if to say I can totally just recreate your entire previous company's software product myself. But when I saw that I was getting charged 30 dollars a month to my personal AWS account for a handfull of datastreams... that part of the operation got shut down pretty quickly. After that I was able to develop some basic functionality for my coworkers to download the logfiles and process them in excel (as was being done before), and our reliance on the old crunch servers was offiially gone! </p>
-
-
-
-
-
 
 
 
