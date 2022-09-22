@@ -42,7 +42,7 @@
 			<section class="banner style2 orient-left content-align-center image-position-center fullscreen onload-image-fade-in onload-content-fade-right" id="welcome">
 				<div class="content">
 					<h1>Mandarin on Rails</h1>
-					<p><i>Ruby, Ruby on Rails, Google Cloud Services (Cloud Run, Cloud Storage, Secrets), Docker</i></p>
+					<p><i>Ruby, Ruby on Rails, Google Cloud Services (Cloud Run, Cloud Storage, Secrets), Docker, DataTables</i></p>
 					<p class="major">A web application to segment Chinese text into words and other repeated sequences of characters</p>
 					<a target = "_blank" href="https://mandarinonrails-owawhtdoha-uc.a.run.app/" class="button small wide">Website</a>
 					<a target="_blank" href="https://github.com/wantsomechocolate/mandarin_on_rails" class="button small wide">Github Repo</a>
@@ -137,4 +137,83 @@
 
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+Doing a project in rails with no prior Ruby experience was definitely challenging. To be honest, I was expecting way more railings. There were no admin pages, no users, no user roles, each one requiring either a gem or two, or building from scratch. I learned through some research that Devise was the go to gem for user authentication, but in the readme for it, they actual recommend NOT using devise for your first rails project and building user authentication from scratch instead. That's more like Ruby on the top of a moderately tall building with no parapet and devise is booting you off. 
+
+
+So I went through the tutorial a couple of times, started getting the hang of the rails workflow for creating and modifying models, configuring routes, and updating controllers and views to get the user experience I wanted. But then I got to the javascript. I'm not sure if it was an issue with turbo, or an incompatibility with the HTML5 template I chose and DataTables (the javascript library I used to add filtering and sorting functionality to my html tables), but I spent about a week trying to figure out hotwire, turbo, stimulus and going through the html5 template and datatables javascript, to no avail. There were two main issues, the first was that clicking anything interactive on the datatable would cause the left navigation bar to move slightly to the left. If you sorted enough times, then the left navigation would just dissappear completely. This only happened at the largest media width for some reason, the difference being that smaller width screens, the left hand pane was hidden by default. So I modified the template to hide the pane by default on all screen widths, but that wasn't the biggest problem. 
+
+The biggest problem was that the menu button would not work if I followed a link to a page, but only after refreshing the page. I tried some suggested solutions, but rails 7 is somewhat new and there were not that many answers to choose from. I ended up completely disabling turbo for a bit, but then I noticed that I actually did like some of the functionality it provided, mainly that nice loading bar at the top of the page when the page is loading new content. In the end I just changed html5 templates. I still had to do some rejigerring, but in the end datatables, my menu button, AND turbo were all peacfully co-existing. 
+
+Then I found out that devise doesn't handle user roles, only user authentication. Any authenticated user can view anyone else's records. I installed the cancancan gem which was quite easy to setup initially, but then I realized it broke my devise guest user setup, but that wasn't too hard to fix.
+
+So I had a working site, with guest users, user registration and login, I got email working in order to send activation links, but I found that devise flash messages were not working. In some cases, devise was just appending the flash message AFTER the body of my html. I did some googling and apparently there had been a known issue between rails 7 and devise. So I tried everything I could think of, everything I could find, different ways to render the flash messages, overriding the devise failure app to change the way devise generated flash messages and nothing was working, I still wasn't able to see any flash messages. I spent on and off over a week trying to figure this out. Sometimes the flash messages would stop appearing at the bottom of the page, but they still wouldn't appear like I was seeing in everyone else's posts/solutions. Was it turbo again >:|  No, it was that they were appearing behind the navigation bar and I couldn't see them. I finally figured this out by applying bootstrap styles to them which causes the message to be thick enough where it poked out below the bottom of the header. So I just moved where I was putting flash messages in the layout and applied a tiny bit of custom css and finally put that one to bed.
+
+Now that I have the skeleton setup I am taking a break and hope to be back to add some functionality later on.
+
+Thanks for reading. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
