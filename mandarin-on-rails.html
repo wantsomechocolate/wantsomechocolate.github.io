@@ -177,35 +177,46 @@ Thanks for reading.
 
 Explanation and Examples
 
-This application is meant as a tool to facilitate the consumption of Chinese text by those that are students of the language. The main functionality it provides is the partitioning of Chinese text into subsequences, called shingles. Shingles are subsquences of a body of text that may overlap with eachother, like shingles on a roof. 
+Project Description
+This application is meant as a tool to facilitate the consumption of Chinese text by those that are students of the language. The main functionality it provides is the partitioning of Chinese text into subsequences, called shingles. Shingles are subsquences of a body of text that may overlap with eachother, like shingles on a roof. It provides this information in a table that can be sorted, filtered, and exported in a format that can then be imported into Pleco, the de-facto standard in Chinese to English dictionaries. 
 
+The Algorithms
 I'm using two different methods for segmenting the input texts. One to find sequences of characters that appear in the reference dictionary (words), and one to find repeated sequences of characters that were not found in the dictionary (tokens). 
 
-1.)Words: To find words I use a longest matching algorithm where I find the longest dictionary entry starting at each index of the input text (I actually use a trie for this!). But I only add words to the output if they reach a new "high-point" in the text (e.g. if ABC and BC are both dictionary entries, BC won't be added to the output when ABC appears in the input text because they both have the same ending index in the input text).
+1.)Words: To find words I use a longest matching algorithm where I find the longest dictionary entry starting at each index of the input text (I actually use a trie for this!). But I only add words to the output if they reach a new "high-point" in the text (e.g. if ABC and BC are both dictionary entries, BC won't be added to the output when ABC appears in the input text because they both have the same ending index (high-point) in the input text).
 
-2.)Tokens: I find tokens by keeping track of the count of all unique subsequences from length 1 to nax_token_length, then I remove any token that has the same count as any longer token that completely contains it (i.e. any token that only ever appears as part of longer tokens is not included in the output). I also remove tokens that appear in the dictionary, don't appear more than min_count times, and are shorter than min_token_length. 
+2.)Tokens: I find tokens by keeping track of the count of all unique subsequences from length 1 to max_token_length, then I remove any token that has the same count as any longer token that completely contains it (i.e. any token that only ever appears as part of longer tokens is not included in the output). I also remove tokens that appear in the dictionary, don't appear more than min_count times, and are shorter than min_token_length. 
 
 
 Other Features
-Once the tokens are generated, the rest of the application is just about searching, sorting, pruning, and exporting the shingles list in a format that can be used to create flashcards. 
+Once the tokens are generated, the rest of the application is just about searching, sorting, pruning, and exporting the shingles list in a format that can be used to create flashcards. For searching and filtering, I used DataTables.js. The main functionality I added was to mark words as known so they don't appear in the output list, and exportation in a format that can be directly imported into Pleco. 
+
+Deployment
+I'm using Google Cloud Run, Google Secret Manager, Google 
 
 
 
+Guest Users
+Authentication
+User Roles
 
-
-Sections to have:
-The top one
-Some sort of intro?
-Definitions
-Algorithms? maybe algo1 and algo2
-Other functionality/ future features?
-Conclusion
 -->
 
+<!--
+Tech Stack
+
+Ruby and Rails for server-side processing.
+Puma (the default web-server for Rails)
+Google Clound Run for hosting
+Postgres
+
+Development Environment
+
+Production Environment
 
 
 
-
+This project was a way to learn a new tech stack and 
 
 
 
